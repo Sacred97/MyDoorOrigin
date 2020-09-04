@@ -116,6 +116,15 @@ $(document).ready(function(){
                
         });
 
+        $(".main-page__container").on("click","a", function (event) {
+    
+            event.preventDefault();
+            let id  = $(this).attr('href'),
+            top = $(id).offset().top - $('.header').height();   
+            $('body,html').animate({scrollTop: top}, 500);
+               
+        });
+
         $('.header__item').click(function( e ){
             e.preventDefault();
             $('.header__menu').find('.header__item_active').removeClass('header__item_active');
